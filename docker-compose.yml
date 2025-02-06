@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app-service:
+    build:
+      context: ./app-service
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - my-network
+
+  redirect:
+    build:
+      context: ./redirect
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"  # Nginx roda na porta 80, porem como tenho um apache rodando na porta 80, foi alterado para 8080(sudo lsof -i :80)
+    networks:
+      - my-network
+    depends_on:
+      - app-service
+
+networks:
+  my-network:
+    driver: bridge
