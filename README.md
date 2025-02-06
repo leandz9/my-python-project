@@ -4,8 +4,9 @@ Este repositório contém duas aplicações: um servidor Flask e um proxy de red
 
 🚀 Estrutura do Projeto
 
+```plaintext
 my-python-project
-├── app
+├── app-service
 │   ├── Dockerfile          # Dockerfile para a aplicação Flask
 │   ├── app-service.py      # Arquivo principal do servidor Flask
 │   ├── requirements.txt    # Dependências Python
@@ -19,7 +20,7 @@ my-python-project
 │   ├── redirect-service.yaml    # Service Kubernetes para o Nginx
 │   ├── ingress.yaml             # Configuração do Ingress (opcional)
 ├── docker-compose.yml        # Configuração para rodar via Docker Compose
-└── README.md                 # Documentação do projeto
+└── README.md   
 
 🐳 Executando com Docker Compose
 
